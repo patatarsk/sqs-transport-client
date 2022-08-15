@@ -6,7 +6,7 @@ import {
 } from '@nestjs/microservices';
 import { EventEmitter } from 'events';
 import { SQS } from 'aws-sdk';
-import { ClientConfiguration } from 'aws-sdk/clients/sqs';
+import { ClientConfiguration, GetQueueUrlResult } from 'aws-sdk/clients/sqs';
 import { sendMessageToQueue } from './sendMessageToQueue';
 import { createQueue } from './createQueue';
 
