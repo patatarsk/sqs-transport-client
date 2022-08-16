@@ -1,7 +1,7 @@
 import { MessageHandler } from '@nestjs/microservices';
 import { ClientConfiguration, GetQueueUrlResult } from 'aws-sdk/clients/sqs';
 
-declare class TransportStrategy {
+export declare class TransportStrategy {
   constructor(configuration: ClientConfiguration);
   getQueueUrl(queueName: string): Promise<GetQueueUrlResult>;
   listen(callback: any): any;
