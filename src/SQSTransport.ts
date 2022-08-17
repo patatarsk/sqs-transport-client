@@ -26,14 +26,6 @@ export class TransportStrategy
     this.sqs = new SQS(this.options);
   }
 
-  async getQueueUrl(queueName: string) {
-    const params = {
-      QueueName: queueName,
-    };
-
-    return await this.sqs.getQueueUrl(params).promise();
-  }
-
   async listen(callback: () => void) {
     for (const messageHandler of this.messageHandlers) {
       const [pattern, handler] = messageHandler;

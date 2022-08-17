@@ -34,14 +34,17 @@ export class SQSClient extends ClientProxy {
   }
 
   async getQueueUrlByPattern(cmd: string) {
-    const { QueueUrls } = await this.sqs.listQueues().promise();
-    const url = QueueUrls.find((url) => url.split('/').reverse()[0] === cmd);
+    const params = {
+      QueueName: cmd,
+    };
 
-    if (!url) {
+    const { QueueUrl } = await this.sqs.getQueueUrl(params).promise();
+
+    if (!QueueUrl) {
       throw new Error(`Queue ${cmd} not found`);
     }
 
-    return url;
+    return QueueUrl;
   }
 
   async listenForResponceOnce(receiverId: string): Promise<any> {
