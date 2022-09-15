@@ -1,0 +1,28 @@
+{
+  "name": "@patatarsk/sqs-transport-client",
+  "version": "1.0.7",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patatarsk/sqs-transport-client.git"
+  },
+  "author": "patatarsk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patatarsk/sqs-transport-client/issues"
+  },
+  "homepage": "https://github.com/patatarsk/sqs-transport-client#readme",
+  "dependencies": {
+    "@nestjs/microservices": "^9.0.9",
+    "aws-sdk": "^2.1194.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/events": "^3.0.0"
+  }
+}
